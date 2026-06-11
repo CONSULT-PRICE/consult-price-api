@@ -7,6 +7,14 @@ function createCupomDocument(data) {
 		total: data.total,
 		items: data.items,
 		itemCount: data.itemCount,
+		emitente: data.emitente,
+		consumidor: data.consumidor,
+		nota: data.nota,
+		totais: data.totais,
+		pagamento: data.pagamento,
+		operacao: data.operacao,
+		tributos: data.tributos,
+		informacoesAdicionais: data.informacoesAdicionais,
 		source: data.source,
 		metadata: data.metadata
 	};
