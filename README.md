@@ -8,6 +8,8 @@ API em desenvolvimento que recebe o HTML de um cupom fiscal, ou a URL do QR Code
 npm start
 ```
 
+Voce tambem pode criar um arquivo `.env` na raiz com a configuracao do MongoDB.
+
 Servidor padrao: `http://localhost:3000`
 
 MongoDB local padrao:
@@ -21,6 +23,9 @@ Variaveis opcionais:
 - `MONGODB_URI`
 - `MONGODB_DB_NAME`
 - `MONGODB_COLLECTION_NAME`
+- `MONGODB_CONNECT_TIMEOUT_MS`
+- `MONGODB_SERVER_SELECTION_TIMEOUT_MS`
+- `REMOTE_FETCH_TIMEOUT_MS`
 
 ## Endpoint inicial
 
@@ -85,6 +90,13 @@ Resposta exemplo:
 2. Inicie a API com `npm start`.
 3. Envie um `POST /cupom` com `sourceUrl`, `qrCode`, `qrCodeImageUrl`, `qrCodeImageBase64` ou `html`.
 4. Confira o documento salvo na colecao `cupons` do banco `consult-price`.
+
+## Como testar com uma conexao Mongo existente
+
+1. Copie a URI que voce ja usa no VS Code.
+2. Crie um arquivo `.env` baseado em `.env.example`.
+3. Reinicie a API com `npm start`.
+4. Teste `GET /health/db` antes de testar `POST /cupom`.
 
 ## Proximo passo natural
 
